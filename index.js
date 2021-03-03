@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 5000;
 const bp = require("body-parser");
 const fetch = require("node-fetch");
 
@@ -25,7 +25,7 @@ app.post("/", (req, res) => {
         username: "Jarl",
         avatar:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Chauncey_Billups.jpg/175px-Chauncey_Billups.jpg",
-        content: "testing this webhook",
+        content: "testing this webhook from heroku",
       }),
     }
   );
