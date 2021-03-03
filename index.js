@@ -25,7 +25,7 @@ app.post("/", (req, res) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         username: `${req.body.sender.login}`,
-        avatar: `${req.body.sender.avatar_url}`,
+        avatar_url: `${req.body.sender.avatar_url}`,
         content: `Hey! I just starred the ${req.body.repository.name} repository on GitHub!"`,
       }),
     }
