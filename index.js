@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   //   console.log(req.body);
 
-  console.log("USERNAME:", req.body.sender.login);
+  //   console.log("USERNAME:", req.body.sender.login);
 
   fetch(
     "https://discord.com/api/webhooks/816409393943805963/zcMXnR-RMR8-NTauCoWtwwAEHMau9fjzxXz-9qia4LfYRl6zhUzJO5UPA79vHbLSXJUY",
@@ -27,7 +27,7 @@ app.post("/", (req, res) => {
         username: "Jarl",
         avatar:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Chauncey_Billups.jpg/175px-Chauncey_Billups.jpg",
-        content: "testing this webhook from heroku",
+        content: req.body,
       }),
     }
   );
