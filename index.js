@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  console.log(req.body);
+  //   console.log(req.body);
 
   console.log("USERNAME:", req.body.sender.login);
 
@@ -34,5 +34,5 @@ app.post("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`webhook server running, waiting on repo to be starred`);
 });
