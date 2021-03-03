@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  //   console.log(req.body);
+  console.log(req.body);
 
   console.log("USERNAME:", req.body.sender.login);
 
@@ -24,10 +24,10 @@ app.post("/", (req, res) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        username: "Jarl",
+        username: "GitHub Repo Bot",
         avatar:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Chauncey_Billups.jpg/175px-Chauncey_Billups.jpg",
-        content: "req.body",
+        content: `${req.body.sender.login}just starred the <nameofrepo> repository!"`,
       }),
     }
   );
