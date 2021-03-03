@@ -8,7 +8,9 @@ app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send(
+    "This is a server listening to repo changes. Once it detects a push in the repo, it sends a message to a discord server"
+  );
 });
 
 app.post("/", (req, res) => {
