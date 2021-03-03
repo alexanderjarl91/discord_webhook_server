@@ -27,7 +27,7 @@ app.post("/", (req, res) => {
         username: "Jarl",
         avatar:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Chauncey_Billups.jpg/175px-Chauncey_Billups.jpg",
-        content: req.body,
+        content: "req.body",
       }),
     }
   );
