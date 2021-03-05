@@ -30,6 +30,19 @@ app.post("/", (req, res) => {
       }),
     }
   );
+  
+  fetch(
+    "https://hooks.slack.com/services/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",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        text: `${req.body.sender.login} just starred the ${req.body.repository.name} repository on GitHub`
+      }),
+    }
+  );
+  
+  
 });
 
 app.listen(port, () => {
