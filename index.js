@@ -32,7 +32,7 @@ app.post("/", (req, res) => {
   );
   
   fetch(
-    "https://hooks.slack.com/services/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",
+    "https://hooks.slack.com/services/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",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
