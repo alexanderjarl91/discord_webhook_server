@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const bp = require("body-parser");
 const fetch = require("node-fetch");
+const env = require("dotenv");
 
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
@@ -30,19 +31,14 @@ app.post("/", (req, res) => {
       }),
     }
   );
-  
-  fetch(
-    "https://hooks.slack.com/services/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",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        text: `${req.body.sender.login} just starred the ${req.body.repository.name} repository on GitHub`
-      }),
-    }
-  );
-  
-  
+
+  fetch(process.env.SLACK_HOOK, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      text: `${req.body.sender.login} just starred the ${req.body.repository.name} repository on GitHub`,
+    }),
+  });
 });
 
 app.listen(port, () => {
